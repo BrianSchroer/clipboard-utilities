@@ -16,7 +16,11 @@ namespace ClipboardUtilities.CopyFileName
 
                     if (File.Exists(path))
                     {
-                        ClipboardHelper.CopyToClipboard(path);
+                        ClipboardHelper.CopyStringToClipboard(path);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"File not found: \"{path}\"");
                     }
                 }
             }

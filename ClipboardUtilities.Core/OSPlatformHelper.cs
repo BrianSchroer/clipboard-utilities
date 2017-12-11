@@ -30,14 +30,12 @@ namespace ClipboardUtilities.Core
 
         public static string Bash(string command)
         {
-            string escaped = command.Replace("\"", "\\\"");
-            return Run("/bin/bash", $"-c \"{escaped}\"");
+            return Run("/bin/bash", $"-c \"{command}\"");
         }
 
         public static string Bat(string command)
         {
-            string escaped = command.Replace("\"", "\\\"");
-            return Run("cmd.exe", $"/c \"{escaped}\"");
+            return Run("cmd.exe", $"/c \"{command}\"");
         }
 
         private static string Run(string fileName, string arguments)

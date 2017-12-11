@@ -16,15 +16,12 @@ namespace ClipboardUtilities.CopyFileContents
 
                     if (File.Exists(path))
                     {
-                      string contents = string.Empty;
-                      Console.WriteLine($"Reading {path}...");
-                      using (var sr = new StreamReader(path))
-                      {
-                          contents = sr.ReadToEnd();
-                      }
-                      Console.WriteLine("File contents:");
-                      Console.WriteLine(contents);
-                      ClipboardHelper.CopyToClipboard(contents);
+                        string contents = string.Empty;
+                        ClipboardHelper.CopyFileContentsToClipboard(path);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"File not found: \"{path}\"");
                     }
                 }
             }
